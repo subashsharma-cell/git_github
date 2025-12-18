@@ -1,1 +1,2 @@
 Hello from text file
+this is new version
