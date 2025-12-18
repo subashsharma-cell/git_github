@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC2 Instance Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .info-item {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 4px solid #007bff;
+        }
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+        .value {
+            color: #333;
+            margin-top: 5px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>EC2 Instance Information</h1>
+        
+        <div class="info-item">
+            <div class="label">Private IP Address:</div>
+            <div class="value"><!--#echo var="private_ip" --></div>
+        </div>
+        
+        <div class="info-item">
+            <div class="label">Hostname:</div>
+            <div class="value"><!--#echo var="hostname" --></div>
+        </div>
+        
+        <div class="info-item">
+            <div class="label">Current Deployed Date:</div>
+            <div class="value"><!--#echo var="DATE_LOCAL" --></div>
+        </div>
+        
+        <div class="info-item">
+            <div class="label">Current Code Version:</div>
+            <div class="value"><!--#echo var="version" --></div>
+        </div>
+
+        <!-- Free text / paragraph section -->
+        <div class="container" style="margin-top: 20px;">
+        <p style="color:#444; line-height:1.6;">
+            <!-- You can put any free string here -->
+            <!--#echo var="free_text" -->
+            This is my free writing
+        </p>
+    </div>
+    </div>
+</body>
+</html>
